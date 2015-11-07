@@ -18,17 +18,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         }
     })
-    .state('threads.threadId', {
-        url: '/:threadId',
+    .state('thread', {
+        url: '/threads/:threadId',
         templateUrl: 'js/threads/thread.html',
         controller: 'threadCtrl',
-//        resolve: {
-//            threadRef: function(threadService, $stateParams) {
-//                return threadService.getThread($stateParams.threadId);
-//            },
-//            commentsRef: function(threadService, $stateParams) {
-//                return threadService.getComments($stateParams.threadId);
-//            }
-//        }
+        resolve: {
+            threadRef: function(threadService, $stateParams) {
+                return threadService.getThread($stateParams.threadId);
+            },
+            commentsRef: function(threadService, $stateParams) {
+                return threadService.getComments($stateParams.threadId);
+            }
+        }
     })
 });

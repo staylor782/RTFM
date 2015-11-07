@@ -9,7 +9,7 @@ app.service('threadService', function(fb) {
     }
     
     this.getThread = function(threadId) {
-        return new Firebase(fb.url + '/threads' + threadId);
+        return new Firebase(fb.url + '/threads/' + threadId);
     }
     
     this.getComments = function(threadId) {
