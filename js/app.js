@@ -6,8 +6,13 @@ app.constant('fb', {
 
 app.config(function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/threads');
+    $urlRouterProvider.otherwise('/home');
     $stateProvider
+    .state('home', {
+        url: '/home',
+        templateUrl: 'js/home/homeTmpl.html',
+        controller: 'homeCtrl'
+    })
     .state('threads', {
         url: '/threads',
         templateUrl: 'js/threads/threads.html',

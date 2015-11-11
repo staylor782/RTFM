@@ -7,7 +7,9 @@
         <button ng-disabled="newCommentForm.$invalid" ng-click="createComment(username, newCommentText)">Add Comment</button>
     </form>
     
-    <ul>
-        <li ng-repeat="comment in comments">{{comment.username}}: {{comment.text}}</li>
-    </ul>
+    <div>
+        <ul>
+            <li ng-repeat="comment in comments">{{comment.username}}: {{comment.text}}</li>
+        </ul>
+    </div>
 </div>
